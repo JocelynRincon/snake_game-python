@@ -2,13 +2,13 @@
 
 # CONTEXT: :book:
 Investigación y realización de proyecto para poder conocer los conceptos básicos del lenguaje de Python y saber cómo aplicarlos en un proyecto.
- A traves de la realización de un juego clasico conocido como Snake Game. El cual se ralizará a traves de los siguientes momentos:
-Crear el cuerpo de la serpiente
-Animar el cuerpo de la serpiente
-Controlar el movimiento de la serpiente
-Crear la comida y su respectiva colisión
-Crear el tablero de puntos
-Detectar las colisiones con las cuatro paredes
+ A traves de la realización de un juego clásico conocido como Snake Game, El cual se ralizará a traves de los siguientes momentos:
+Crear el cuerpo de la serpiente  
+Animar el cuerpo de la serpiente  
+Controlar el movimiento de la serpiente  
+Crear la comida y su respectiva colisión  
+Crear el tablero de puntos  
+Detectar las colisiones con las cuatro paredes  
 Detectar la colisión con la cola o cualquier segmento del cuerpo de la serpiente.
 
 # LANGUAGE :wrench:   
