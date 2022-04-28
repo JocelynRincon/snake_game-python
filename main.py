@@ -3,6 +3,7 @@ from turtle import Screen  #Screen aquí es una clase en la línea 7 se crea el 
 from snake import Snake
 from food import Food
 import time
+from scoreboard import Scoreboard
 
 
 
@@ -20,6 +21,9 @@ snake = Snake()
 
 #instanciar el objeto comida
 food = Food()
+
+#instanciar el objeto tablero de puntos
+scoreboard = Scoreboard()
 
 #movimiento serpiente
 screen.listen()
@@ -44,6 +48,31 @@ while game_is_on:
     time.sleep(0.1)   #aumentar o disminuir la velocidad
     
     snake.move()
+
+#detecar colisión con comida
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        scoreboard.increase_score()
+        snake.extend()
+
+#detectar las paredes
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:       #la pared mide 300 se le pone 280 para que se vea el efecto que murió
+        game_is_on = False
+        scoreboard.game_over()
+
+
+        #detectar la colisión de la cola
+    for segment in snake.segments:
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
+
+    
+
+
+
 
 
 screen.exitonclick()  #para que al abrir la ventana se cierre cuando le dé click

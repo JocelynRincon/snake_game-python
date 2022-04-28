@@ -17,13 +17,24 @@ class Snake:
 
 
     
-    def create_snake(self):
+    def create_snake(self):    #crea el cuerpo
         for position in STARTING_POSITION:
-            snake_segment = Turtle("square")
-            snake_segment.color("white")
-            snake_segment.penup()  #para que no cree la línea
-            snake_segment.goto(position)
-            self.segments.append(snake_segment)  #append permite agrgar cosas en una lista
+            self.add_segment(position)
+            
+
+    def add_segment(self, position):
+        snake_segment = Turtle("square")
+        snake_segment.color("white")
+        snake_segment.penup()  #para que no cree la línea
+        snake_segment.goto(position)
+        self.segments.append(snake_segment)  #append permite agregar cosas en una lista
+
+    
+    def extend(self):   #extiende el cuerpo
+        self.add_segment(self.segments[-1].position())
+        
+
+
 
     def move(self):
         #movimiento
